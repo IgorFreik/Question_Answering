@@ -1,0 +1,47 @@
+general:
+  seed: 42  # random seed for reproducibility
+
+bidaf:
+  model_params:
+    model_name: bidaf
+    hidden_size: 100
+    word_dim: 100
+    char_dim: 8
+    char_channel_width: 5
+    char_channel_size: 100
+    dropout: 0.2
+  model_learning:
+    context_threshold: 500
+    batch_first: True
+    learning_rate: 3e-5
+    num_epochs: 10
+    train_batch_size: 32
+    test_batch_size: 32
+
+bert:
+  model_params:
+    model_name: bert
+    hg_model_name: bert-base-uncased
+  model_learning:
+    context_threshold: 500
+    batch_first: True
+    learning_rate: 3e-5
+    num_epochs: 10
+    train_batch_size: 32
+    test_batch_size: 32
+
+roberta:
+  model_params:
+    model_name: roberta
+    hg_model_name: roberta-base
+  model_learning:
+    context_threshold: 500
+    batch_first: True
+    learning_rate: 3e-5
+    num_epochs: 10
+    train_batch_size: 32
+    test_batch_size: 32
+
+mlflow:
+  experiment_name: "my_experiment_name"
+  tracking_url: "http://127.0.0.1:5000"
